@@ -12,12 +12,20 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.myietv.app",
+      "versionCode": 1,
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
+      "permissions": [
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "com.google.android.gms.permission.AD_ID"
+      ],
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
@@ -38,11 +46,36 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-ads-admob",
+        {
+          "googleMobileAdsAppId": "ca-app-pub-8657148189651625~7068787489"
+        }
+      ]
+      ,
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "kotlinVersion": "1.9.24",
+            "androidGradlePluginVersion": "8.4.1",
+            "compileSdkVersion": 36,
+            "targetSdkVersion": 36,
+            "minSdkVersion": 24
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "917b7eda-5e64-4eaa-8ffc-b3f86c59d3d0"
+      }
     }
   }
 }

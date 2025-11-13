@@ -1,0 +1,43 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    // Autorisations basées sur les custom claims
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+    function isSuperAdmin() {
+      return request.auth != null && request.auth.token.superadmin == true;
+    }
+
+    // Photos de profil
+    match /profilePictures/{userId}/{fileName} {
+      allow read, write, delete: if request.auth != null && (request.auth.uid == userId || isAdmin() || isSuperAdmin());
+    }
+
+    // Vidéos brutes
+    match /videos/{videoId}/{fileName} {
+      allow read: if true;
+      allow write, delete: if isAdmin() || isSuperAdmin();
+    }
+
+    // Miniatures
+    match /thumbnails/{videoId}/{thumbnailFileName} {
+      allow read: if true;
+      allow write, delete: if isAdmin() || isSuperAdmin();
+    }
+
+    // Images/ressources des formations
+    match /formations/{formationId}/{fileName} {
+      // Lecture publique facultative (inutile de forcer l'auth pour afficher une image)
+      allow read: if true;
+      // Écriture réservée aux admins (interface d'admin)
+      allow write, delete: if isAdmin() || isSuperAdmin();
+    }
+
+    // Par défaut: tout refuser
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

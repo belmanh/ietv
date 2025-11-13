@@ -1,0 +1,88 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Méta (dashboard, configuration) lisible par le client
+    match /meta/{docId} {
+      allow read: if true;
+      allow write: if isAdmin() || isSuperAdmin();
+    }
+
+    function isAdmin() {
+      return request.auth != null && request.auth.token.admin == true;
+    }
+    function isSuperAdmin() {
+      return request.auth != null && request.auth.token.superadmin == true;
+    }
+    // UID racine immuable (empêche toute suppression et le changement de rôle côté client)
+    function isRootSuperAdmin(uid) {
+      return uid == "T72qt1EqFpSJQ6tzEtVqmigt4IS2";
+    }
+
+    // Profils utilisateurs
+    match /users/{userId} {
+      allow read: if true;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      // Mise à jour par l'utilisateur lui-même autorisée, mais sans pouvoir changer le rôle si c'est le root
+      allow update: if request.auth != null && request.auth.uid == userId
+                    && (!isRootSuperAdmin(userId) || request.resource.data.role == resource.data.role);
+      // Mise à jour par admin/superadmin autorisée, sauf pour l'utilisateur racine immuable
+      allow update: if (isAdmin() || isSuperAdmin()) && !isRootSuperAdmin(userId);
+      // Suppression : admin/superadmin autorisés sauf pour l'utilisateur racine
+      allow delete: if (isAdmin() || isSuperAdmin()) && !isRootSuperAdmin(userId);
+    }
+
+    // Favoris d'un utilisateur: lisible/écriture par le propriétaire uniquement
+    match /users/{userId}/favorites/{videoId} {
+      allow read, create, update, delete: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Inscriptions (enrollments) d'un utilisateur à une formation
+    // Chaque document sous users/{userId}/enrollments/{formationId} contient au minimum:
+    // { formationId: string, joinedAt: Timestamp }
+    // Écriture et lecture uniquement par le propriétaire authentifié.
+    match /users/{userId}/enrollments/{formationId} {
+      allow read, create, delete: if request.auth != null && request.auth.uid == userId;
+      allow update: if false; // pas de mise à jour partielle nécessaire
+    }
+
+    // Vidéos (métadonnées)
+    match /videos/{videoId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin() || isSuperAdmin();
+      match /comments/{commentId} {
+        allow read: if true;
+        allow create: if request.auth != null && request.resource.data.userId == request.auth.uid;
+        allow update, delete: if request.auth != null && (resource.data.userId == request.auth.uid || isAdmin());
+      }
+      match /likes/{userIdWhoLiked} {
+        allow read: if true;
+        allow create: if request.auth != null && request.auth.uid == userIdWhoLiked;
+        allow delete: if request.auth != null && (request.auth.uid == userIdWhoLiked || isAdmin());
+        allow update: if false;
+      }
+      match /dislikes/{userIdWhoDisliked} {
+        allow read: if true;
+        allow create: if request.auth != null && request.auth.uid == userIdWhoDisliked;
+        allow delete: if request.auth != null && (request.auth.uid == userIdWhoDisliked || isAdmin());
+        allow update: if false;
+      }
+      match /favorites/{userIdWhoFavorited} {
+        allow read: if request.auth != null && request.auth.uid == userIdWhoFavorited;
+        allow create: if request.auth != null && request.auth.uid == userIdWhoFavorited;
+        allow delete: if request.auth != null && request.auth.uid == userIdWhoFavorited;
+        allow update: if false;
+      }
+      match /shares/{userIdWhoShared} {
+        allow read: if false;
+        allow create: if request.auth != null && request.auth.uid == userIdWhoShared;
+        allow update, delete: if false;
+      }
+    }
+
+    // Formations (métadonnées)
+    match /formations/{formationId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin() || isSuperAdmin();
+    }
+  }
+}
