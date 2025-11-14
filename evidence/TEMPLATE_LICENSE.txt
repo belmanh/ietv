@@ -1,0 +1,26 @@
+[LETTERHEAD or COMPANY NAME]
+
+LICENSE / PERMISSION TO DISTRIBUTE
+
+Date: [2025-10-14]
+
+To whom it may concern,
+
+This letter certifies that [CONTENT OWNER NAME] grants [YOUR COMPANY / APP NAME: myIETV] a non-exclusive license to distribute and stream the following content via our mobile application "myIETV":
+
+- Content title(s) / identifiers: [list of videos or channels]
+- Content location (URLs or storage path): [e.g. Firebase Storage paths or public URLs]
+- License scope: Streaming / On-demand playback in mobile apps
+- Territory: [e.g. Worldwide or list of countries]
+- Period: From [start date] to [end date]
+- Any additional restrictions: [e.g. no download, no redistribution]
+
+Signed:
+
+__________________________
+[Name]
+[Title]
+[Company]
+[Contact email]
+
+(Attach this signed letter or a scanned PDF when submitting to Google Play.)
