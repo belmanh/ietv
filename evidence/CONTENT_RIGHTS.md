@@ -31,6 +31,15 @@ But: remplissez les sections ci-dessous et joignez les documents (contrats, emai
 
 ---
 
+Information spécifique pour IE TV
+- Nom du détenteur: IE TV
+- Type de droit: Titulaire exclusif des vidéos publiées sur l'application (contenu créé par l'équipe IE TV)
+- Période: droits détenus en continu (content created and owned by IE TV)
+- Pièces jointes: ajouter ici tout document interne attestant la création (ex: liste des vidéos, certificats de production) dans `evidence/contracts/`
+- URLs: les vidéos sont hébergées sur Firebase Storage via la collection `videos` de Firestore; chaque document contient un champ `videoUrl` pointant vers le fichier.
+
+---
+
 Instructions d'usage:
 - Placez ici les copies des contrats dans `evidence/contracts/`
 - Placez les emails signés dans `evidence/emails/`

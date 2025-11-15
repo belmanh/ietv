@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>IE TV — Politique de confidentialité</title>
+    <link rel="icon" href="/favicon.png" />
+    <style>
+      :root{--bg:#f7fcff;--card:#fff;--accent:#0b77c2;--muted:#6b7280;--sidebar-width:280px}
+      html,body{height:100%}
+      body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;margin:0;background:var(--bg);color:#0b1726}
+      header{background:linear-gradient(90deg,var(--accent),#4fb0e8);color:#fff;padding:16px 18px;display:flex;align-items:center;gap:12px}
+      header img{width:44px;height:44px;border-radius:8px;background:transparent;padding:0;object-fit:contain}
+      .layout{display:flex;height:calc(100vh - 72px)}
+      .sidebar{width:var(--sidebar-width);min-width:64px;max-width:520px;background:#f3fbff;border-right:1px solid rgba(11,119,194,0.06);overflow:auto}
+      .sidebar.collapsed{width:56px}
+      /* when collapsed hide link text and show short label */
+      .toc-short{display:none;display:inline-block;width:28px;text-align:center;margin-right:8px;font-weight:700;color:var(--accent)}
+      .toc-text{display:inline-block}
+      .sidebar.collapsed .toc-text{display:none}
+      .sidebar.collapsed .toc-short{display:none}
+      .sidebar .toc a{display:flex;align-items:center;gap:6px;padding:6px 8px}
+      .sidebar.collapsed .toc a{justify-content:center;padding:6px 4px}
+      /* when collapsed, hide the full TOC so links are not visible or clickable */
+      .sidebar.collapsed .toc{display:none}
+      /* sidebar logo shown only when collapsed */
+      .sidebar-logo{display:none;padding:12px;text-align:center}
+      .sidebar-logo img{width:40px;height:40px;border-radius:6px;object-fit:contain}
+      .sidebar.collapsed .sidebar-logo{display:block}
+      .sidebar:not(.collapsed) .sidebar-logo{display:none}
+      /* sidebar menu button (in the vertical bar) */
+      .side-menu-btn{display:block;background:transparent;border:0;color:var(--accent);font-size:20px;width:40px;height:40px;border-radius:8px;margin:8px;cursor:pointer}
+      .sidebar.collapsed .side-menu-btn{margin:8px auto;display:block}
+      .resizer{width:6px;cursor:col-resize;background:transparent}
+      .content{flex:1;overflow:auto;padding:20px}
+      .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 6px 18px rgba(6,15,31,0.06);max-width:none}
+      h1{margin-top:0}
+      .toc{padding:12px}
+      .toc ul{margin:8px 0 0 0;padding-left:12px}
+      .toc a{color:var(--accent);text-decoration:none;display:block;padding:6px 8px;border-radius:6px}
+      .toc a:hover{background:rgba(11,119,194,0.06)}
+      .toc .toggle{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-bottom:1px solid rgba(11,119,194,0.04)}
+      .collapse-btn{background:transparent;border:0;color:var(--accent);cursor:pointer;font-weight:600}
+      main{max-width:900px}
+       p{line-height:1.6;color:#0f1724}
+      footer{margin-top:18px;color:var(--muted);font-size:13px}
+      @media (max-width:800px){
+        .layout{flex-direction:column;height:auto}
+        .sidebar{width:100%;height:auto}
+        .resizer{display:none}
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <img src="/icon.png" alt="IE TV" />
+      <div>
+        <div style="font-weight:700;font-size:18px">IE TV</div>
+        <div style="font-size:13px;opacity:0.95">Politique de confidentialité</div>
+      </div>
+    </header>
+    <div class="layout">
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo" aria-hidden="true">
+          <button id="sideMenuBtn" class="side-menu-btn" aria-label="Menu">☰</button>
+        </div>
+        <div class="toc">
+          <div class="toggle">
+            <strong>Sommaire</strong>
+            <div>
+              <button class="collapse-btn" id="collapseBtn">◀</button>
+            </div>
+          </div>
+          <div id="tocList">
+            <div><a href="#politique-de-confidentialit-ie-tv" data-short="P"><span class="toc-short">P</span><span class="toc-text">Politique de confidentialité — IE TV</span></a></div><div><a href="#contr-leur-des-donn-es" data-short="C"><span class="toc-short">C</span><span class="toc-text">Contrôleur des données</span></a></div><div><a href="#-propos-de-l-application" data-short="À"><span class="toc-short">À</span><span class="toc-text">À propos de l'application</span></a></div><div><a href="#sommaire" data-short="S"><span class="toc-short">S</span><span class="toc-text">Sommaire</span></a></div><div><a href="#donn-es-collect-es" data-short="D"><span class="toc-short">D</span><span class="toc-text">Données collectées</span></a></div><div><a href="#services-tiers" data-short="S"><span class="toc-short">S</span><span class="toc-text">Services tiers</span></a></div><div><a href="#finalit-s-et-bases-l-gales" data-short="F"><span class="toc-short">F</span><span class="toc-text">Finalités et bases légales</span></a></div><div><a href="#partage-et-divulgation" data-short="P"><span class="toc-short">P</span><span class="toc-text">Partage et divulgation</span></a></div><div><a href="#politique-de-confidentialit-ie-tv" data-short="P"><span class="toc-short">P</span><span class="toc-text">Politique de confidentialité — IE TV</span></a></div><div><a href="#introduction" data-short="I"><span class="toc-short">I</span><span class="toc-text">Introduction</span></a></div><div><a href="#sommaire" data-short="S"><span class="toc-short">S</span><span class="toc-text">Sommaire</span></a></div><div><a href="#-propos-d-ie-tv" data-short="À"><span class="toc-short">À</span><span class="toc-text">À propos d'IE TV</span></a></div><div><a href="#donn-es-collect-es" data-short="D"><span class="toc-short">D</span><span class="toc-text">Données collectées</span></a></div><div><a href="#services-et-tiers" data-short="S"><span class="toc-short">S</span><span class="toc-text">Services et tiers</span></a></div><div><a href="#finalit-s-et-base-juridique" data-short="F"><span class="toc-short">F</span><span class="toc-text">Finalités et base juridique</span></a></div><div><a href="#partage-transferts-et-conservation" data-short="P"><span class="toc-short">P</span><span class="toc-text">Partage, transferts et conservation</span></a></div><div><a href="#s-curit-" data-short="S"><span class="toc-short">S</span><span class="toc-text">Sécurité</span></a></div><div><a href="#droits-des-utilisateurs" data-short="D"><span class="toc-short">D</span><span class="toc-text">Droits des utilisateurs</span></a></div><div><a href="#enfants" data-short="E"><span class="toc-short">E</span><span class="toc-text">Enfants</span></a></div><div><a href="#paiements-dons-et-liens-externes" data-short="P"><span class="toc-short">P</span><span class="toc-text">Paiements, dons et liens externes</span></a></div><div><a href="#droits-d-auteur-et-proc-dure-de-retrait-dmca-" data-short="D"><span class="toc-short">D</span><span class="toc-text">Droits d'auteur et procédure de retrait (DMCA)</span></a></div><div><a href="#contact" data-short="C"><span class="toc-short">C</span><span class="toc-text">Contact</span></a></div><div><a href="#r-sum-data-safety-" data-short="R"><span class="toc-short">R</span><span class="toc-text">Résumé « Data Safety »</span></a></div>
+          </div>
+        </div>
+      </aside>
+      <div class="resizer" id="resizer" title="Ajuster la largeur"></div>
+      <div class="content">
+        <div class="card">
+          
+<h1 id="politique-de-confidentialit-ie-tv">Politique de confidentialité — IE TV</h1>
+
+<p>Dernière mise à jour : 15 novembre 2025</p>
+
+<p>Bienvenue sur IE TV. Cette page explique clairement quelles données nous collectons, pourquoi nous les collectons, comment nous les protégeons et comment vous pouvez exercer vos droits.</p>
+
+<h2 id="contr-leur-des-donn-es">Contrôleur des données</h2>
+
+<p>IE TV est l'éditeur et le responsable du traitement des données collectées via l'application. Si vous avez des questions sur la manière dont nous traitons vos données, contactez-nous (voir section « Contact »).</p>
+
+<h2 id="-propos-de-l-application">À propos de l'application</h2>
+
+<p>IE TV offre la lecture de vidéos créées ou diffusées par notre équipe, ainsi que des fonctions sociales : créer un compte, ajouter aux favoris, commenter, partager et suivre l'historique de lecture.</p>
+
+<h2 id="sommaire">Sommaire</h2>
+
+<ul><li>Données collectées</li>
+<li>Services tiers</li>
+<li>Finalités et bases légales</li>
+<li>Partage, conservation et sécurité</li>
+<li>Droits des utilisateurs</li>
+<li>Enfants</li>
+<li>Paiements et liens tiers</li>
+<li>Contact</li></ul>
+<h2 id="donn-es-collect-es">Données collectées</h2>
+
+<ul><li>**Données d'inscription :** identifiant (UID), adresse e‑mail, nom d'affichage que vous fournissez lors de l'inscription.</li>
+<li>**Contenu utilisateur :** commentaires, likes et partages que vous soumettez.</li>
+<li>**Données techniques :** diagnostics, rapports de crash, statistiques d'usage (pages/écrans consultés) pour améliorer l'application.</li></ul>
+<h3 id="donn-es-minimales">Données minimales</h3>
+
+<p>Nous collectons uniquement les données nécessaires au fonctionnement des fonctionnalités que vous utilisez.</p>
+
+<h2 id="services-tiers">Services tiers</h2>
+
+<p>Nous utilisons des services de Firebase : Authentication, Firestore, Storage et, le cas échéant, Analytics. Ces services sont fournis par Google et traitent des données selon leurs propres politiques. Nous n'utilisons pas de régies publicitaires tierces au moment de la publication.</p>
+
+<h2 id="finalit-s-et-bases-l-gales">Finalités et bases légales</h2>
+
+<ul><li>Fournir et personnaliser l'expérience (compte, favoris, commentaires) — base : exécution du contrat ou intérêt légitime.</li>
+<li>Sécurité et prévention des abus — base : intérêt légitime.</li>
+<li>Amélioration produit via données techniques et diagnostics — base : consentement/ intérêt légitime.</li></ul>
+<h2 id="partage-et-divulgation">Partage et divulgation</h2>
+
+<p>Nous ne vendons pas vos données. Nous pouvons partager des données agrégées ou des informations limitées avec des prestataires (ex. hébergement, analytics, rapports de plantage) pour fournir l'application. Nous ne divulguerons vos données personnelles qu'en cas d'obligation légale.</p>
+
+
+<h1 id="politique-de-confidentialit-ie-tv">Politique de confidentialité — IE TV</h1>
+
+<p>Dernière mise à jour : 15 novembre 2025</p>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>IE TV est une plateforme de streaming développée pour soutenir la mission associative d'Instantanés Éternels (IE), une association franco‑africaine fondée en 2023. IE TV n'a pas été pensée pour divertir uniquement : elle vise à engager, sensibiliser et inspirer les communautés par la diffusion de films, documentaires, formations et contenus culturels.</p>
+
+<p>Techniquement, IE TV repose sur une architecture moderne et légère : React Native / Expo pour l'application mobile, Firebase (Authentication, Firestore, Storage) pour la gestion des données et de la sécurité, et une interface administrative web (IE Admin) construite en React. L'écosystème est conçu pour être sécurisé, évolutif et adapté à une structure associative à budget limité.</p>
+
+<p>Cette politique décrit quelles données nous collectons, pourquoi, comment nous les utilisons, comment nous les protégeons, et comment vous pouvez exercer vos droits.</p>
+
+<h2 id="sommaire">Sommaire</h2>
+
+<ul><li>À propos d'IE TV</li>
+<li>Données collectées</li>
+<li>Services et tiers</li>
+<li>Finalités et base juridique</li>
+<li>Partage et conservation</li>
+<li>Sécurité</li>
+<li>Droits des utilisateurs</li>
+<li>Enfants</li>
+<li>Paiements, dons et liens externes</li>
+<li>Droits d'auteur et procédure de retrait (DMCA)</li>
+<li>Contact</li></ul>
+<h2 id="-propos-d-ie-tv">À propos d'IE TV</h2>
+
+<p>IE TV diffuse des vidéos produites par Instantanés Éternels ou publiées sous une licence appropriée. L'application propose des fonctionnalités sociales : création de compte, favoris, commentaires, historique de lecture et partages. Certains contenus ou fonctionnalités peuvent être réservés aux comptes enregistrés.</p>
+
+<h2 id="donn-es-collect-es">Données collectées</h2>
+
+<p>Nous traitons les catégories de données suivantes :</p>
+
+<ul><li>Données d'identité et de contact : adresse e‑mail, nom d'affichage, identifiant utilisateur (UID) fournis lors de la création du compte.</li>
+<li>Contenu utilisateur : commentaires, interactions publiques (likes, partages), images ou médias que vous téléversez (si activé).</li>
+<li>Données techniques : informations de diagnostic et d'utilisation (logs, durée de session, erreurs) et données de l'appareil (modèle, version Android/iOS) pour améliorer la qualité du service.</li>
+<li>Données de stockage : références d'objets stockés dans Firebase Storage (vidéos, miniatures) ; nous ne stockons pas les informations de paiement dans l'application.</li></ul>
+<p>Nous collectons uniquement ce qui est nécessaire au fonctionnement des fonctionnalités que vous utilisez.</p>
+
+<h2 id="services-et-tiers">Services et tiers</h2>
+
+<p>IE TV utilise les services Google Firebase (Authentication, Firestore, Storage, et éventuellement Firebase Analytics / Crashlytics). Ces services traitent des données pour notre compte conformément à leurs politiques. Nous pouvons aussi utiliser des services d'hébergement et des outils d'observabilité.</p>
+
+<p>Nous n'utilisons pas de services publicitaires tiers au moment de la publication.</p>
+
+<h2 id="finalit-s-et-base-juridique">Finalités et base juridique</h2>
+
+<ul><li>Fournir et maintenir l'application et ses fonctionnalités (exécution du contrat / exécution du service).</li>
+<li>Gérer les comptes utilisateurs, l'authentification et la sécurité (intérêt légitime / exécution du service).</li>
+<li>Analyser l'usage et améliorer l'application (consentement ou intérêt légitime selon la fonctionnalité).</li>
+<li>Répondre aux demandes légales et protéger nos droits (obligation légale / intérêt légitime).</li></ul>
+<h2 id="partage-transferts-et-conservation">Partage, transferts et conservation</h2>
+
+<ul><li>Nous ne vendons pas vos données.</li>
+<li>Nous partageons des données uniquement avec des prestataires agissant pour notre compte (hébergement, services Firebase, outils d'analytique). Ces prestataires sont contractuellement tenus de protéger les données.</li>
+<li>Les vidéos et contenus utilisateurs sont stockés dans Firebase Storage ; les métadonnées et interactions sont stockées dans Firestore.</li>
+<li>Conservation : les comptes et contenus utilisateurs sont conservés tant que le compte existe. Les logs techniques sont conservés pendant une durée limitée (p. ex. 90 jours), sauf besoin légal contraire.</li></ul>
+<h2 id="s-curit-">Sécurité</h2>
+
+<p>Nous appliquons des mesures techniques et organisationnelles pour protéger vos données : contrôle d'accès, règles Firebase Security, bonnes pratiques de chiffrement côté serveur lorsque disponibles, et surveillance des accès. Malgré ces mesures, aucune transmission sur Internet n'est totalement exempte de risque.</p>
+
+<h2 id="droits-des-utilisateurs">Droits des utilisateurs</h2>
+
+<p>Conformément à la réglementation applicable, vous pouvez :</p>
+
+<ul><li>demander l'accès à vos données ;</li>
+<li>demander la rectification ou la suppression de vos données ;</li>
+<li>demander la portabilité de vos données (dans la mesure du possible) ;</li>
+<li>retirer votre consentement lorsque le traitement en dépend.</li></ul>
+<p>Pour exercer ces droits, envoyez-nous une demande via l'adresse de contact (voir ci‑dessous). Nous répondrons dans les délais légaux applicables.</p>
+
+<h2 id="enfants">Enfants</h2>
+
+<p>L'application n'est pas destinée aux enfants de moins de 13 ans. Nous ne collectons pas sciemment des données d'enfants. Si vous pensez que nous avons collecté des données d'un enfant, contactez‑nous pour que nous supprimions ces données.</p>
+
+<h2 id="paiements-dons-et-liens-externes">Paiements, dons et liens externes</h2>
+
+<p>Les dons ou paiements sont effectués via des prestataires tiers (par ex. https://ie.com). Nous ne collectons ni ne stockons d'informations de paiement sur IE TV. Les pages externes sont gérées par leurs propres conditions et politiques de confidentialité.</p>
+
+<h2 id="droits-d-auteur-et-proc-dure-de-retrait-dmca-">Droits d'auteur et procédure de retrait (DMCA)</h2>
+
+<p>Si vous pensez qu'un contenu publié sur IE TV viole vos droits d'auteur, contactez‑nous avec : une identification du contenu, une description des droits revendiqués, vos coordonnées et une déclaration sous peine de parjure. Nous traiterons la demande rapidement et, le cas échéant, retirerons le contenu.</p>
+
+<h2 id="contact">Contact</h2>
+
+<p>Contrôleur : Instantanés Éternels (IE) — IE TV</p>
+<p>E‑mail : contact@belmanhdubien.com</p>
+
+
+<h2 id="r-sum-data-safety-">Résumé « Data Safety »</h2>
+
+<ul><li>Données collectées : nom utilisateur, adresse e‑mail, contenu utilisateur (commentaires), données techniques (logs, diagnostics).</li>
+<li>Partage : Données partagées avec prestataires (Firebase) pour fournir le service. Aucune vente de données.</li>
+<li>Chiffrement : Données en transit chiffrées (HTTPS). Stockage sécurisé via Firebase.</li>
+<li>Finalités : Fonctionnement de l'app, sécurité, amélioration produit.</li></ul>
+
+
+
+          <footer id="policyFooter">Dernière mise à jour : 15 novembre 2025 — Pour toute question : <a href="mailto:contact@belmanhdubien.com">contact@belmanhdubien.com</a></footer>
+        </div>
+      </div>
+    </div>
+    <script>
+      const sidebar = document.getElementById('sidebar');
+      const collapseBtn = document.getElementById('collapseBtn');
+      const sideMenuBtn = document.getElementById('sideMenuBtn');
+      // restore persisted state and width
+      const persisted = localStorage.getItem('ietv_sidebar_collapsed');
+      const savedWidth = localStorage.getItem('ietv_sidebar_width');
+      if (savedWidth) document.documentElement.style.setProperty('--sidebar-width', savedWidth + 'px');
+      if (persisted === '1') { sidebar.classList.add('collapsed'); collapseBtn.textContent = '▶'; }
+      const tocElement = document.querySelector('.toc');
+      function setCollapsedState(isCollapsed){
+        if (isCollapsed) {
+          sidebar.classList.add('collapsed');
+          collapseBtn.textContent = '▶';
+          // mark TOC as hidden for assistive tech and remove focus
+          if (tocElement) tocElement.setAttribute('aria-hidden','true');
+          try { if (document.activeElement && sidebar.contains(document.activeElement)) document.activeElement.blur(); } catch(e){}
+        } else {
+          sidebar.classList.remove('collapsed');
+          collapseBtn.textContent = '◀';
+          if (tocElement) tocElement.removeAttribute('aria-hidden');
+        }
+        localStorage.setItem('ietv_sidebar_collapsed', isCollapsed ? '1' : '0');
+      }
+
+      collapseBtn.addEventListener('click', () => {
+        const is = !sidebar.classList.contains('collapsed');
+        setCollapsedState(is);
+      });
+
+      if (sideMenuBtn) {
+        sideMenuBtn.addEventListener('click', () => {
+          const isCollapsed = sidebar.classList.contains('collapsed');
+          setCollapsedState(!isCollapsed);
+        });
+      }
+      const resizer = document.getElementById('resizer');
+      let dragging = false;
+      resizer.addEventListener('mousedown', () => { 
+        // if collapsed, expand first so user can drag
+        if (sidebar.classList.contains('collapsed')) { sidebar.classList.remove('collapsed'); collapseBtn.textContent = '◀'; localStorage.setItem('ietv_sidebar_collapsed','0'); }
+        dragging = true; document.body.style.cursor = 'col-resize'; 
+      });
+      // double click resizer to reset / expand
+      resizer.addEventListener('dblclick', () => {
+        document.documentElement.style.setProperty('--sidebar-width', '280px');
+        sidebar.classList.remove('collapsed');
+        collapseBtn.textContent = '◀';
+        localStorage.setItem('ietv_sidebar_collapsed', '0');
+        localStorage.removeItem('ietv_sidebar_width');
+      });
+      window.addEventListener('mousemove', (e) => { if (!dragging) return; const newWidth = Math.max(64, Math.min(520, e.clientX)); document.documentElement.style.setProperty('--sidebar-width', newWidth + 'px'); });
+      window.addEventListener('mouseup', () => { if (dragging) {
+        // persist width
+        const w = getComputedStyle(document.documentElement).getPropertyValue('--sidebar-width').trim();
+        if (w.endsWith('px')) localStorage.setItem('ietv_sidebar_width', w.replace('px',''));
+      }
+      dragging = false; document.body.style.cursor = ''; });
+      document.querySelectorAll('.toc a').forEach(a => a.addEventListener('click', e => { e.preventDefault(); const id = a.getAttribute('href').slice(1); const el = document.getElementById(id); if (el) el.scrollIntoView({behavior:'smooth', block:'start'}); history.replaceState(null,'', '#'+id); }));
+    </script>
+  </body>
+</html>

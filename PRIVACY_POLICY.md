@@ -143,7 +143,7 @@ Contrôleur : Instantanés Éternels (IE) — IE TV
 E‑mail : contact@belmanhdubien.com
 
 
-## Résumé « Data Safety » (texte prêt à copier)
+## Résumé « Data Safety »
 
 - Données collectées : nom utilisateur, adresse e‑mail, contenu utilisateur (commentaires), données techniques (logs, diagnostics).
 - Partage : Données partagées avec prestataires (Firebase) pour fournir le service. Aucune vente de données.
