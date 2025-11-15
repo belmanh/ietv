@@ -37,8 +37,8 @@ eas build:configure
 ### 1.3 Vérifier la configuration
 Assurez-vous que `app.json` contient :
 - ✅ `package`: com.myietv.app
-- ✅ `versionCode`: 1
-- ✅ `version`: 1.0.0
+- ✅ `versionCode`: 2
+- ✅ `version`: 2.0.0
 
 ---
 
