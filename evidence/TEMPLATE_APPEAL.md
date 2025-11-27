@@ -1,10 +1,10 @@
 # Modèle d'appel pour Google Play - myIETV
 
-Objet: Appel suite au refus de publication — myIETV (com.myietv.app)
+Objet: Appel suite au refus de publication — IE TV (com.ietv)
 
 Bonjour l'équipe Google Play,
 
-Nous avons reçu une notification indiquant que notre application myIETV (package: `com.myietv.app`) a été refusée pour non-conformité aux exigences de Play Console. Nous avons pris les mesures suivantes pour corriger les problèmes identifiés:
+Nous avons reçu une notification indiquant que notre application IE TV (package: `com.ietv`) a été refusée pour non-conformité aux exigences de Play Console. Nous avons pris les mesures suivantes pour corriger les problèmes identifiés:
 
 1. Permissions:
 - Les permissions de stockage externe (`READ_EXTERNAL_STORAGE`, `WRITE_EXTERNAL_STORAGE`) ont été supprimées de l'application car elles n'étaient pas nécessaires ; l'app utilise uniquement `INTERNET`.

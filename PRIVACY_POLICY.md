@@ -1,3 +1,61 @@
+# Politique de confidentialité — IE TV
+
+Date de mise à jour : 19/11/2025
+
+Cette politique de confidentialité décrit comment les données des utilisateurs sont collectées, utilisées et protégées par l'application IE TV.
+
+1) Responsable du traitement
+- Nom : Instantanés Éternels
+- Responsable / Développeur : Belmanh Dubien
+- Adresse : 3 rue du ponceau, 95000 Cergy, France
+- Email : contact@belmanhdubien.com
+- Site : https://ietv-privacy.web.app/
+
+Remarque : l'application IE TV est développée et publiée par un développeur individuel (Belmanh Dubien). Ce n'est pas une application gouvernementale et n'est pas fournie par une autorité publique.
+
+2) Données collectées et finalités
+- Données d'identification : adresse e-mail (si l'utilisateur la fournit) — finalité : gestion du compte et communication avec l'utilisateur.
+- Données d'utilisation et diagnostics : logs, erreurs, métriques d'utilisation — finalité : amélioration du service, détection et correction des bugs.
+- Données multimédia (audio/vidéo) : uniquement si l'utilisateur téléverse du contenu volontairement — finalité : stockage et diffusion de contenu dans l'application.
+- Identifiant publicitaire (AD_ID) : uniquement si les annonces sont activées — finalité : analyse et personnalisation des annonces.
+
+Nous ne collectons PAS de données de santé sensibles ni d'informations financières (numéros de carte bancaire, portefeuilles crypto, etc.).
+
+3) Base légale
+- Exécution du contrat / relation utilisateur
+- Intérêt légitime (amélioration du service, sécurité)
+- Consentement pour les traitements non essentiels (ex. tracking publicitaire)
+
+4) Partage des données et sous-traitants
+- Fournisseurs de services (sous-traitants) : Firebase / Google (authentification, base de données, stockage, analytics), hébergement des pages statiques, services CDN.
+- Les sous-traitants peuvent être situés hors de l'Union Européenne ; des garanties contractuelles (clauses contractuelles types) sont appliquées lorsque nécessaire.
+
+5) Durée de conservation
+- Données de compte : conservées tant que le compte existe.
+- Logs et diagnostics : conservés pendant une période limitée (ex. 6–24 mois).
+- Contenu multimédia : conservé tant que l'utilisateur ne le supprime pas ou selon les conditions indiquées lors du dépôt du contenu.
+
+6) Droits des personnes concernées (RGPD)
+Vous avez le droit d'accéder, rectifier, demander la suppression, limiter le traitement, obtenir la portabilité des données et vous opposer au traitement lorsque légalement possible.
+Pour exercer vos droits, contactez : contact@belmanhdubien.com
+
+7) Cookies et trackers
+- L'application et le site peuvent utiliser des cookies et trackers (analytics, stockage local). Le consentement de l'utilisateur est requis pour les usages non essentiels.
+
+8) Sécurité
+- Des mesures techniques et organisationnelles appropriées sont mises en place pour protéger les données. Aucun système n'est totalement infaillible.
+
+9) Contact
+Pour toute question relative à la vie privée ou pour exercer vos droits : contact@belmanhdubien.com
+
+10) Réclamations
+Vous avez le droit d'introduire une plainte auprès de l'autorité de contrôle compétente (en France : CNIL) si vous estimez que le traitement de vos données viole le RGPD.
+
+---
+
+Version courte (à afficher dans Play Console):
+
+IE TV (package com.ietv) collecte uniquement les données nécessaires au fonctionnement de l'application (emails, logs, contenu multimédia soumis par l'utilisateur, identifiant publicitaire si les annonces sont activées). Nous ne collectons pas de données de santé ni d'informations financières. Pour plus d'informations : https://ietv-privacy.web.app/
 
 # Politique de confidentialité — IE TV
 

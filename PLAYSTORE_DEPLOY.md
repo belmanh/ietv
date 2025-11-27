@@ -36,7 +36,7 @@ eas build:configure
 
 ### 1.3 Vérifier la configuration
 Assurez-vous que `app.json` contient :
-- ✅ `package`: com.myietv.app
+- ✅ `package`: com.ietv
 - ✅ `versionCode`: 2
 - ✅ `version`: 2.0.0
 
@@ -311,7 +311,7 @@ eas build:view
 - ⚠️ Chaque nouvelle version doit avoir un `versionCode` > précédent
 
 ### Package name
-- `com.myietv.app` est **permanent** et **unique**
+- `com.ietv` est **permanent** et **unique**
 - ❌ Ne peut pas être changé après la première publication
 
 ### Firebase
@@ -346,7 +346,7 @@ Avant de soumettre en production :
 
 ### Erreur : "Package name already exists"
 - Le package name est déjà utilisé
-- Changer dans `app.json` : `"package": "com.myietv.app2"`
+- Changer dans `app.json` : `"package": "com.ietv"`
 
 ### Erreur : "Version code must be greater"
 - Incrémenter `versionCode` dans `app.json`
